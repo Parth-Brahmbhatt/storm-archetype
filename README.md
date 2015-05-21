@@ -14,20 +14,6 @@ with storm-core dependency. This will give you a good starting point without hav
 * mvn archetype:generate -DarchetypeGroupId=org.apache.storm -DarchetypeArtifactId=storm-archetype -DarchetypeVersion=1.0-SNAPSHOT  -DgroupId=(your-group) -DartifactId=(your-artifactId)
 * You should now have a storm project under current directory with folder name same as your-artifactId.
 * cd (your-artifactId)
-* It should have following structure:
-├── pom.xml
-└── src
-    └── main
-        └── java
-            └── my
-                └── apache
-                    └── storm
-                        ├── bolt
-                        │   └── AggregateCountBolt.java
-                        ├── spout
-                        │   └── WordSpout.java
-                        └── topology
-                            └── Topology.java
 * mvn clean compile assembly:single (This will generate a jar with all dependencies)
 * storm jar target/(your-artifactId)-1.0-SNAPSHOT-jar-with-dependencies.jar apache.storm.topology.Topology (topology-name). (This assumes you have storm client installed locally)
 
