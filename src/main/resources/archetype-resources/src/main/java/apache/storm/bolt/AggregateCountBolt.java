@@ -31,7 +31,7 @@ public class AggregateCountBolt extends BaseRichBolt {
         if (wordCount.containsKey(word)) {
             BigDecimal val = wordCount.get(word).add(BigDecimal.ONE);
             wordCount.put(word, val);
-            LOG.info("%s = %s", word, val);
+            LOG.info(String.format("%s = %s", word, val));
             System.out.println(word + " = " + val);
             collector.emit(input, new Values(word, val));
         } else {
